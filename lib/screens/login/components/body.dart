@@ -2,8 +2,8 @@ import 'package:authApp/components/already_have_an_account_acheck.dart';
 import 'package:authApp/components/roundedButton.dart';
 import 'package:authApp/components/rounded_input_field.dart';
 import 'package:authApp/components/rounded_password_field.dart';
-import 'package:authApp/constants.dart';
 import 'package:authApp/screens/login/components/background.dart';
+import 'package:authApp/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -42,7 +42,16 @@ class Body extends StatelessWidget {
             height: size.height * 0.025,
           ),
           AlreadyHaveAnAccountCheck(
-            press: () {},
+            press: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return WelcomeScreen();
+                  },
+                ),
+              ),
+            },
           ),
         ],
       ),
